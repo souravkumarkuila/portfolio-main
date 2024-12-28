@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Sourav Kuila - fullstack developer</title>
+  </head>
+
+  <body class="font-inter bg-stone-950 flex flex-col min-h-full">
+    <header
+      id="header"
+      class="bg-transparent backdrop-blur-md text-white mix-blend-difference fixed top-0 left-0 right-0 z-30"
+    >
+      <nav
+        class="flex flex-row justify-between items-center md:py-4 md:px-10 p-4"
+      >
+        <div
+          class="size-10 rounded-3xl inline-flex items-center justify-center"
+        >
+        </div>
+        <div
+          id="hamburger-container"
+          class="size-10 border border-gray-400 rounded-full flex justify-center items-center cursor-pointer"
+        >
+          <svg
+            id="hamburger"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              id="line1"
+              x="3"
+              y="7"
+              width="18"
+              height="2"
+              fill="currentColor"
+              rx="1"
+            />
+            <rect
+              id="line2"
+              x="3"
+              y="15"
+              width="18"
+              height="2"
+              fill="currentColor"
+              rx="1"
+            />
+          </svg>
+        </div>
+      </nav>
+    </header>
+
+    <div id="preloader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+      <div id="preloader-text" class="text-white text-4xl font-normal"></div>
+    </div>
+
+    <div
+      id="menu"
+      class="fixed top-0 left-0 w-full h-full hidden bg-zinc-800 z-10 text-gray-100 px-6 py-12"
+    >
+      <div class="px-5 py-12">
+        <ul class="mt-14">
+          <li
+            class="p-4 transition-all duration-300 ease-in-out hover:bg-zinc-700"
+          >
+            <a
+              href="#aboutme"
+              class="menu-item flex justify-between items-center group"
+            >
+              <span
+                class="text-4xl font-light transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                >About me</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+          </li>
+          <li
+            class="p-4 transition-all duration-300 ease-in-out hover:bg-zinc-700"
+          >
+            <a
+              href="#skills"
+              class="menu-item flex justify-between items-center group"
+            >
+              <span
+                class="text-4xl font-light transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                >Skills & Tools</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+          </li>
+          <li
+            class="p-4 transition-all duration-300 ease-in-out hover:bg-zinc-700"
+          >
+            <a
+              href="#projects"
+              class="menu-item flex justify-between items-center group"
+            >
+              <span
+                class="text-4xl font-light transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                >Projects</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+          </li>
+          <li
+            class="p-4 transition-all duration-300 ease-in-out hover:bg-zinc-700"
+          >
+            <a
+              href="#footer"
+              class="menu-item flex justify-between items-center group"
+            >
+              <span
+                class="text-4xl font-light transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                >Contact</span
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <section
+      id="hero-section"
+      class="relative flex flex-col gap-6 md:gap-4 items-center justify-center w-full bg-hero bg-cover bg-center min-h-screen p-4 pt-16"
+    >
+      <div class="text-center uppercase">
+        <span class="text-lg text-gray-100/80 tracking-widest"
+          >Sourav Kuila</span
+        >
+      </div>
+      <div class="text-center uppercase">
+        <h1
+          class="text-7xl font-semibold md:text-8xl text-gray-100/80 mb-4 tracking-wide"
+        >
+          turning
+        </h1>
+        <h1
+          class="text-7xl font-semibold md:text-8xl text-gray-100/80 mb-4 tracking-wide"
+        >
+          ideas into
+        </h1>
+        <h1
+          class="text-7xl font-semibold md:text-8xl animate-gradient-text bg-gradient-to-r from-blue-600 via-purple-500 to-red-600 bg-clip-text text-transparent tracking-wide"
+        >
+          code
+        </h1>
+      </div>
+
+      <div class="absolute md:bottom-4 bottom-16 text-center">
+        <span
+          class="uppercase tracking-wider text-sm inline-flex justify-center items-center animate-gradient-text bg-gradient-to-r from-black via-gray-400 to-slate-900 bg-clip-text text-transparent"
+          >scroll down
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-4 ml-2 text-gray-100/50"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+            />
+          </svg>
+        </span>
+      </div>
+    </section>
+
+    <section
+      id="hero-section-absolute"
+      class="overlay absolute hidden top-0 left-0 md:flex flex-col gap-6 md:gap-4 items-center justify-center w-full bg-gray-100 h-screen p-4 pt-16"
+    >
+      <div class="text-center uppercase">
+        <span class="text-lg text-black tracking-widest">Sourav Kuila</span>
+      </div>
+      <div class="text-center uppercase">
+        <h1
+          class="text-7xl font-semibold md:text-8xl text-black mb-4 tracking-wide"
+        >
+          turning
+        </h1>
+        <h1
+          class="text-7xl font-semibold md:text-8xl text-black mb-4 tracking-wide"
+        >
+          ideas into
+        </h1>
+        <h1
+          class="text-7xl font-semibold md:text-8xl animate-gradient-text bg-gradient-to-r from-slate-800 via-slate-400 to-stone-800 bg-clip-text text-transparent tracking-wide"
+        >
+          code
+        </h1>
+      </div>
+
+    </section>
+
+    <section
+      id="aboutme"
+      class="flex flex-col justify-center items-center p-2 md:p-11 min-h-screen bg-gradient-radial from-stone-900 via-stone-900 to-black"
+    >
+      <div class="md:w-11/12 md:h-[90%] h-2/3 grid place-items-start shadow-lg">
+        <div
+          class="uppercase tracking-wider md:text-transparent text-base mb-4"
+        >
+          About Me
+        </div>
+        <p
+          id="para"
+          class="uppercase font-semibold text-4xl md:text-6xl p-2 py-6 md:p-16 text-start text-white/90 whitespace-normal break-normal"
+        >
+          I'm a passionate fullstack developer focused on creating practical and
+          user-friendly applications.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      class="flex flex-col justify-center items-center gap-6 md:gap-20 min-h-screen px-6 md:p-10 bg-[#2a2a28] text-gray-100"
+    >
+      <h2 class="text-base uppercase tracking-wider md:text-2xl text-gray-100 font-semibold">Skills & Tools</h2>
+      <div
+        id="skills-container"
+        class="self-center flex flex-row flex-wrap gap-1 md:gap-2 justify-center items-center md:px-60"
+      >
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="Java"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij4KPHBhdGggZmlsbD0iI0Y0NDMzNiIgZD0iTTIzLjY1LDI0Ljg5OGMtMC45OTgtMS42MDktMS43MjItMi45NDMtMi43MjUtNS40NTVDMTkuMjI5LDE1LjIsMzEuMjQsMTEuMzY2LDI2LjM3LDMuOTk5YzIuMTExLDUuMDg5LTcuNTc3LDguMjM1LTguNDc3LDEyLjQ3M0MxNy4wNywyMC4zNywyMy42NDUsMjQuODk4LDIzLjY1LDI0Ljg5OHoiPjwvcGF0aD48cGF0aCBmaWxsPSIjRjQ0MzM2IiBkPSJNMjMuODc4LDE3LjI3Yy0wLjE5MiwyLjUxNiwyLjIyOSwzLjg1NywyLjI5OSw1LjY5NWMwLjA1NiwxLjQ5Ni0xLjQ0NywyLjc0My0xLjQ0NywyLjc0M3MyLjcyOC0wLjUzNiwzLjU3OS0yLjgxOGMwLjk0NS0yLjUzNC0xLjgzNC00LjI2OS0xLjU0OC02LjI5OGMwLjI2Ny0xLjkzOCw2LjAzMS01LjU0Myw2LjAzMS01LjU0M1MyNC4zMTEsMTEuNjExLDIzLjg3OCwxNy4yN3oiPjwvcGF0aD48Zz48cGF0aCBmaWxsPSIjMTU2NUMwIiBkPSJNMzIuMDg0IDI1LjA1NWMxLjc1NC0uMzk0IDMuMjMzLjcyMyAzLjIzMyAyLjAxIDAgMi45MDEtNC4wMjEgNS42NDMtNC4wMjEgNS42NDNzNi4yMjUtLjc0MiA2LjIyNS01LjUwNUMzNy41MjEgMjQuMDUzIDM0LjQ2NCAyMy4yNjYgMzIuMDg0IDI1LjA1NXpNMjkuMTI5IDI3LjM5NWMwIDAgMS45NDEtMS4zODMgMi40NTgtMS45MDItNC43NjMgMS4wMTEtMTUuNjM4IDEuMTQ3LTE1LjYzOC4yNjkgMC0uODA5IDMuNTA3LTEuNjM4IDMuNTA3LTEuNjM4cy03Ljc3My0uMTEyLTcuNzczIDIuMTgxQzExLjY4MyAyOC42OTUgMjEuODU4IDI4Ljg2NiAyOS4xMjkgMjcuMzk1eiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMxNTY1QzAiIGQ9Ik0yNy45MzUsMjkuNTcxYy00LjUwOSwxLjQ5OS0xMi44MTQsMS4wMi0xMC4zNTQtMC45OTNjLTEuMTk4LDAtMi45NzQsMC45NjMtMi45NzQsMS44ODljMCwxLjg1Nyw4Ljk4MiwzLjI5MSwxNS42MywwLjU3MkwyNy45MzUsMjkuNTdxeiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMxNTY1QzAiIGQ9Ik0xOC42ODYsMzIuNzM5Yy0xLjYzNiwwLTIuNjk1LDEuMDU0LTIuNjk1LDEuODIyYzAsMi4zOTEsOS43NiwyLjYzMiwxMy42MjcsMC4yMDVsLTIuNDU4LTEuNjMyQzI0LjI3MSwzNC40MDQsMTcuMDE0LDM0LjU3OSwxOC42ODYsMzIuNzM5eiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMxNTY1QzAiIGQ9Ik0zNi4yODEsMzYuNjMyYzAtMC45MzYtMS4wNTUtMS4zNzctMS40MzMtMS41ODhjMi4yMjgsNS4zNzMtMjIuMzE3LDQuOTU2LTIyLjMxNywxLjc4NGMwLTAuNzIxLDEuODA3LTEuNDI3LDMuNDc3LTEuMDkzbC0xLjQyLTAuODM5QzExLjI2LDM0LjM3NCw5LDM1LjgzNyw5LDM3LjAxN0M5LDQyLjUyLDM2LjI4MSw0Mi4yNTUsMzYuMjgxLDM2LjYzMnoiPjwvcGF0aD48L2c+Cjwvc3ZnPg=="
+          />
+          <span>Java</span>
+        </div>
+
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="Angular"
+            src="/angular.svg"
+          />
+          <span>Angular</span>
+        </div>
+
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="svgImg"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CjxwYXRoIGZpbGw9IiMzODhlM2MiIGQ9Ik0xNy4yMDQgMTkuMTIybC00LjkwNyAyLjcxNUMxMi4xMTMgMjEuOTM4IDEyIDIyLjEyNiAxMiAyMi4zMjl2NS40MzNjMCAuMjAzLjExMy4zOS4yOTcuNDkybDQuOTA4IDIuNzE3Yy4xODMuMTAxLjQxLjEwMS41OTMgMGw0LjkwNy0yLjcxN0MyMi44ODcgMjguMTUyIDIzIDI3Ljk2NSAyMyAyNy43NjJ2LTUuNDMzYzAtLjIwMy0uMTEzLS4zOS0uMjk3LS40OTJsLTQuOTA2LTIuNzE1Yy0uMDkyLS4wNTEtLjE5NS0uMDc2LS4yOTctLjA3Ni0uMTAzIDAtLjIwNS4wMjUtLjI5Ny4wNzZNNDIuNDUxIDI0LjAxM2wtLjgxOC40NTJjLS4wMzEuMDE3LS4wNDkuMDQ4LS4wNDkuMDgydi45MDZjMCAuMDM0LjAxOS4wNjUuMDQ5LjA4MmwuODE4LjQ1M2MuMDMxLjAxNy4wNjguMDE3LjA5OSAwbC44MTgtLjQ1M2MuMDMtLjAxNy4wNDktLjA0OC4wNDktLjA4MnYtLjkwNmMwLS4wMzQtLjAxOS0uMDY1LS4wNS0uMDgybC0uODE4LS40NTJDNDIuNTM0IDI0LjAwNCA0Mi41MTcgMjQgNDIuNSAyNFM0Mi40NjYgMjQuMDA0IDQyLjQ1MSAyNC4wMTMiPjwvcGF0aD48cGF0aCBmaWxsPSIjMzc0NzRmIiBkPSJNMzUuNzUxLDEzLjM2NGwtMi4zODktMS4zMzNjLTAuMDc1LTAuMDQyLTAuMTY3LTAuMDQxLTAuMjQxLDAuMDAzIGMtMC4wNzQsMC4wNDQtMC4xMiwwLjEyMy0wLjEyLDAuMjA5TDMzLDIwLjI5NWwtMi4yMDMtMS4yMTlDMzAuNzA1LDE5LjAyNSwzMC42MDIsMTksMzAuNSwxOWMtMC4xMDIsMC0wLjIwNSwwLjAyNS0wLjI5NywwLjA3NiBoMC4wMDFsLTQuOTA3LDIuNzE1QzI1LjExMywyMS44OTIsMjUsMjIuMDgsMjUsMjIuMjgydjUuNDMzYzAsMC4yMDMsMC4xMTMsMC4zOSwwLjI5NywwLjQ5Mmw0LjkwOCwyLjcxNyBjMC4xODMsMC4xMDEsMC40MSwwLjEwMSwwLjU5MywwbDQuOTA3LTIuNzE3QzM1Ljg4NywyOC4xMDYsMzYsMjcuOTE4LDM2LDI3LjcxNVYxMy43ODhDMzYsMTMuNjEyLDM1LjkwNCwxMy40NSwzNS43NTEsMTMuMzY0eiBNMzIuODY2LDI2LjQ1OGwtMi4yMywxLjIzNWMtMC4wODMsMC4wNDYtMC4xODYsMC4wNDYtMC4yNjksMGwtMi4yMzEtMS4yMzVDMjguMDUxLDI2LjQxMiwyOCwyNi4zMjYsMjgsMjYuMjM0di0yLjQ3IGMwLTAuMDkyLDAuMDUxLTAuMTc3LDAuMTM1LTAuMjI0bDIuMjMxLTEuMjM0aC0wLjAwMWMwLjA0Mi0wLjAyMywwLjA4OC0wLjAzNCwwLjEzNS0wLjAzNGMwLjA0NywwLDAuMDkzLDAuMDEyLDAuMTM1LDAuMDM0IGwyLjIzLDEuMjM0QzMyLjk0OSwyMy41ODcsMzMsMjMuNjczLDMzLDIzLjc2NXYyLjQ3QzMzLDI2LjMyNiwzMi45NDksMjYuNDEyLDMyLjg2NiwyNi40NTh6Ij48L3BhdGg+PHBhdGggZmlsbD0iIzJlN2QzMiIgZD0iTTE3LjIwNCwxOS4xMjJMMTIsMjcuNzYyYzAsMC4yMDMsMC4xMTMsMC4zOSwwLjI5NywwLjQ5Mmw0LjkwOCwyLjcxNyBjMC4xODMsMC4xMDEsMC40MSwwLjEwMSwwLjU5MywwTDIzLDIyLjMyOWMwLTAuMjAzLTAuMTEzLTAuMzktMC4yOTctMC40OTJsLTQuOTA2LTIuNzE1Yy0wLjA5Mi0wLjA1MS0wLjE5NS0wLjA3Ni0wLjI5Ny0wLjA3NiBjLTAuMTAzLDAtMC4yMDUsMC4wMjUtMC4yOTcsMC4wNzYiPjwvcGF0aD48cGF0aCBmaWxsPSIjNGNhZjUwIiBkPSJNMTcuMjA0LDE5LjEyMmwtNC45MDcsMi43MTVDMTIuMTEzLDIxLjkzOCwxMiwyMi4xMjYsMTIsMjIuMzI5bDUuMjA0LDguNjQyIGMwLjE4MywwLjEwMSwwLjQxLDAuMTAxLDAuNTkzLDBsNC45MDctMi43MTdDMjIuODg3LDI4LjE1MiwyMywyNy45NjUsMjMsMjcuNzYybC01LjIwMy04LjY0Yy0wLjA5Mi0wLjA1MS0wLjE5NS0wLjA3Ni0wLjI5Ny0wLjA3NiBjLTAuMTAzLDAtMC4yMDUsMC4wMjUtMC4yOTcsMC4wNzYiPjwvcGF0aD48cGF0aCBmaWxsPSIjMzc0NzRmIiBkPSJNNDcuNzAzIDIxLjc5MWwtNC45MDYtMi43MTVDNDIuNzA1IDE5LjAyNSA0Mi42MDIgMTkgNDIuNSAxOWMtLjEwMiAwLS4yMDUuMDI1LS4yOTcuMDc2aC4wMDFsLTQuOTA3IDIuNzE1QzM3LjExNCAyMS44OTIgMzcgMjIuMDg0IDM3IDIyLjI5NHY1LjQxMWMwIC4yMDkuMTE0LjQwMi4yOTcuNTAzbDQuOTA4IDIuNzE3Yy4xODQuMTAyLjQwOS4xMDIuNTkzIDBsMi4yNjMtMS4yNTNjLjIwNy0uMTE1LjIwNi0uNDEyLS4wMDItLjUyNmwtNC45MjQtMi42ODdDNDAuMDUyIDI2LjQxMiA0MCAyNi4zMjUgNDAgMjYuMjMxdi0yLjQ2NmMwLS4wOTIuMDUtLjE3Ny4xMy0uMjIxbDIuMjM1LTEuMjM2aC0uMDAxYy4wNDItLjAyMy4wODgtLjAzNC4xMzUtLjAzNC4wNDcgMCAuMDkzLjAxMi4xMzUuMDM0bDIuMjM1IDEuMjM3Yy4wOC4wNDQuMTMuMTI5LjEzLjIyMXYyLjAxMmMwIC4wODYuMDQ2LjE2Ni4xMjEuMjA5LjA3NS4wNDIuMTY3LjA0Mi4yNDItLjAwMWwyLjM5OC0xLjM5M2MuMTQ4LS4wODYuMjQtLjI0NS4yNC0uNDE3di0xLjg4QzQ4IDIyLjA4NSA0Ny44ODYgMjEuODkyIDQ3LjcwMyAyMS43OTF6TTEwLjcwMyAyMS43OTFsLTQuOTA2LTIuNzE1QzUuNzA1IDE5LjAyNSA1LjYwMiAxOSA1LjUgMTljLS4xMDIgMC0uMjA1LjAyNS0uMjk3LjA3NmguMDAxbC00LjkwNyAyLjcxNUMuMTE0IDIxLjg5MiAwIDIyLjA4NCAwIDIyLjI5NHY3LjQ2NWMwIC4wODYuMDQ2LjE2Ni4xMjEuMjA5LjA3NS4wNDIuMTY3LjA0Mi4yNDItLjAwMWwyLjM5OC0xLjM5M0MyLjkwOSAyOC40ODggMyAyOC4zMjkgMyAyOC4xNTd2LTQuMzkzYzAtLjA5Mi4wNS0uMTc3LjEzLS4yMjFsMi4yMzUtMS4yMzZINS4zNjVjLjA0Mi0uMDIzLjA4OC0uMDM0LjEzNS0uMDM0LjA0NyAwIC4wOTMuMDEyLjEzNS4wMzRsMi4yMzUgMS4yMzdDNy45NSAyMy41ODggOCAyMy42NzMgOCAyMy43NjV2NC4zOTNjMCAuMTcyLjA5MS4zMzEuMjQuNDE3bDIuMzk4IDEuMzkzYy4wNzUuMDQzLjE2Ny4wNDMuMjQyLjAwMUMxMC45NTQgMjkuOTI1IDExIDI5Ljg0NSAxMSAyOS43NTl2LTcuNDY0QzExIDIyLjA4NSAxMC44ODYgMjEuODkyIDEwLjcwMyAyMS43OTF6Ij48L3BhdGg+Cjwvc3ZnPg=="
+          />
+          <span>Node.Js</span>
+        </div>
+
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="svgImg"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CjxwYXRoIGZpbGw9IiNmZmQ2MDAiIGQ9Ik02LDQyVjZoMzZ2MzZINnoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAwMDAxIiBkPSJNMjkuNTM4IDMyLjk0N2MuNjkyIDEuMTI0IDEuNDQ0IDIuMjAxIDMuMDM3IDIuMjAxIDEuMzM4IDAgMi4wNC0uNjY1IDIuMDQtMS41ODUgMC0xLjEwMS0uNzI2LTEuNDkyLTIuMTk4LTIuMTMzbC0uODA3LS4zNDRjLTIuMzI5LS45ODgtMy44NzgtMi4yMjYtMy44NzgtNC44NDEgMC0yLjQxIDEuODQ1LTQuMjQ0IDQuNzI4LTQuMjQ0IDIuMDUzIDAgMy41MjguNzExIDQuNTkyIDIuNTczbC0yLjUxNCAxLjYwN2MtLjU1My0uOTg4LTEuMTUxLTEuMzc3LTIuMDc4LTEuMzc3LS45NDYgMC0xLjU0NS41OTctMS41NDUgMS4zNzcgMCAuOTY0LjYgMS4zNTQgMS45ODUgMS45NTFsLjgwNy4zNDRDMzYuNDUyIDI5LjY0NSAzOCAzMC44MzkgMzggMzMuNTIzIDM4IDM2LjQxNSAzNS43MTYgMzggMzIuNjUgMzhjLTIuOTk5IDAtNC43MDItMS41MDUtNS42NS0zLjM2OEwyOS41MzggMzIuOTQ3ek0xNy45NTIgMzMuMDI5Yy41MDYuOTA2IDEuMjc1IDEuNjAzIDIuMzgxIDEuNjAzIDEuMDU4IDAgMS42NjctLjQxOCAxLjY2Ny0yLjA0M1YyMmgzLjMzM3YxMS4xMDFjMCAzLjM2Ny0xLjk1MyA0Ljg5OS00LjgwNSA0Ljg5OS0yLjU3NyAwLTQuNDM3LTEuNzQ2LTUuMTk1LTMuMzY4TDE3Ljk1MiAzMy4wMjl6Ij48L3BhdGg+Cjwvc3ZnPg=="
+          />
+          <span>JavaScript</span>
+        </div>
+
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="svgImg"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CjxyZWN0IHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgeD0iNiIgeT0iNiIgZmlsbD0iIzE5NzZkMiI+PC9yZWN0Pjxwb2x5Z29uIGZpbGw9IiNmZmYiIHBvaW50cz0iMjcuNDksMjIgMTQuMjI3LDIyIDE0LjIyNywyNS4yNjQgMTguOTg0LDI1LjI2NCAxOC45ODQsNDAgMjIuNzUzLDQwIDIyLjc1MywyNS4yNjQgMjcuNDksMjUuMjY0Ij48L3BvbHlnb24+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM5LjE5NCwyNi4wODRjMCwwLTEuNzg3LTEuMTkyLTMuODA3LTEuMTkycy0yLjc0NywwLjk2LTIuNzQ3LDEuOTg2IGMwLDIuNjQ4LDcuMzgxLDIuMzgzLDcuMzgxLDcuNzEyYzAsOC4yMDktMTEuMjU0LDQuNTY4LTExLjI1NCw0LjU2OFYzNS4yMmMwLDAsMi4xNTIsMS42MjIsNC43MzMsMS42MjJzMi40ODMtMS42ODgsMi40ODMtMS45MiBjMC0yLjQ0OS03LjMxNS0yLjQ0OS03LjMxNS03Ljg3OGMwLTcuMzgxLDEwLjY1OC00LjQ2OSwxMC42NTgtNC40NjlMMzkuMTk0LDI2LjA4NHoiPjwvcGF0aD4KPC9zdmc+"
+          />
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="sql"
+            src="/sql.svg"
+          />
+          <span>SQL</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="postgresql"
+            src="/icons8-postgresql.svg"
+          />
+          <span>PostgreSQL</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="springboot"
+            src="/icons8-spring-boot.svg"
+          />
+          <span>SpringBoot</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-8 grayscale transition-all duration-300 ease-in-out"
+            alt="expressjs"
+            src="/icons8-express-js (1).svg"
+          />
+          <span>expressJS</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="git"
+            src="/icons8-git.svg"
+          />
+          <span>Git</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="docker"
+            src="/icons8-docker.svg"
+          />
+          <span>Docker</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="aws"
+            src="/icons8-aws.svg"
+          />
+          <span>AWS</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="aws"
+            src="/icons8-css3.svg"
+          />
+          <span>CSS3</span>
+        </div>
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="aws"
+            src="/icons8-tailwindcss.svg"
+          />
+          <span>TailwindCSS</span>
+        </div>
+
+        <div
+          class="skill-item px-2 md:px-8 py-2 border rounded-full text-center border-stone-600 hover:bg-neutral-100 hover:text-stone-900 bg-stone-800 transition-all duration-300 ease-in-out flex items-center space-x-1"
+        >
+          <img
+            class="h-8 w-10 grayscale transition-all duration-300 ease-in-out"
+            alt="aws"
+            src="/icons8-bootstrap.svg"
+          />
+          <span>Bootstrap</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="min-h-screen p-4 md:p-8 bg-[#202020]">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-8">
+          <!-- Left Project -->
+          <div class="space-y-6 p-5">
+            <div
+              class="md:w-[556px] md:h-[360px] w-full bg-gradient-to-b from-gray-100 to-purple-50 rounded-xl"
+            >
+              <div
+                class="max-w-full mx-auto rounded-xl overflow-hidden bg-gray-100"
+              >
+                <img
+                  src="/linkfiz.png"
+                  alt="Project Preview"
+                  class="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex gap-2 flex-wrap">
+                <span
+                  class="px-4 py-1 rounded-full bg-purple-600 text-white font-medium"
+                  >Project</span
+                >
+                <span
+                  class="px-4 py-1 rounded-full bg-zinc-900 border border-gray-500 text-white font-normal"
+                  >Angular</span
+                >
+                <span
+                  class="px-4 py-1 rounded-full bg-zinc-900 border border-gray-500 text-white font-normal"
+                  >Java</span
+                >
+              </div>
+
+              <div
+                class="flex flex-col justify-center items-start w-full gap-2"
+              >
+                <div class="space-y-2">
+                  <h2 class="text-2xl text-gray-300 md:text-4xl font-bold">
+                    Linkfiz
+                  </h2>
+                  <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
+                    Production-ready link management tool for sharing and
+                    tracking of links.
+                  </p>
+                </div>
+
+                <div class="md:pr-8 mb-3">
+                  <a
+                    href="https://linkfiz.com"
+                    target="_blank"
+                    class="group inline-flex items-center py-1 text-lg text-white font-medium underline transition-transform"
+                    rel="noopener noreferrer"
+                  >
+                    <span
+                      class="transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      Visit website
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.0"
+                      stroke="currentColor"
+                      class="mt-1 size-5 transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6 p-5">
+            <div
+              class="mockup-browser bg-gray-100 md:w-[556px] md:h-[360px] w-full"
+            >
+              <div class="mockup-browser-toolbar">
+                <div class="input !bg-gray-100 border-gray-200 border">
+                  carwash system
+                </div>
+              </div>
+              <div
+                class="max-w-full mx-auto rounded-xl overflow-hidden bg-gray-100"
+              >
+                <img
+                  src="/project1.jpg"
+                  alt="Project Preview"
+                  class="w-full h-full object-fill rounded-lg"
+                />
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex gap-2 flex-wrap">
+                <span
+                  class="px-4 py-1 rounded-full bg-blue-600 text-white font-medium"
+                  >Side project</span
+                >
+                <span
+                  class="px-4 py-1 rounded-full bg-zinc-900 border border-gray-500 text-white font-normal"
+                  >Angular</span
+                >
+                <span
+                  class="px-4 py-1 rounded-full bg-zinc-900 border border-gray-500 text-white font-normal"
+                  >Java</span
+                >
+                <span
+                  class="px-4 py-1 rounded-full bg-zinc-900 border border-gray-500 text-white font-normal"
+                  >Microservice</span
+                >
+              </div>
+
+              <div
+                class="flex flex-col justify-center items-start w-full gap-2"
+              >
+                <div class="space-y-2">
+                  <h2 class="text-2xl text-gray-300 md:text-4xl font-bold">
+                    Car wash
+                  </h2>
+                  <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
+                    A car wash management system, featuring appointment
+                    scheduling.
+                  </p>
+                </div>
+
+                <div class="md:pr-8 mb-3">
+                  <a
+                    href="https://github.com/ctbanaka/car-wash-system"
+                    target="_blank"
+                    class="group inline-flex items-center py-1 text-lg text-white font-medium underline transition-transform"
+                    rel="noopener noreferrer"
+                  >
+                    <span
+                      class="transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      Repository
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.0"
+                      stroke="currentColor"
+                      class="mt-1 size-5 transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- social links -->
+    <div class="hidden md:block">
+      <div
+        class="md:fixed right-12 bottom-3 -translate-y-1/2 flex flex-col gap-6"
+      >
+        <!-- <a
+          href="#"
+          class="social-link group transition-transform duration-300 hover:translate-x-[-5px]"
+        >
+          <svg
+            class="w-4 h-4 text-gray-300 hover:text-gray-400 transition-colors duration-300"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+        </a> -->
+        <a
+          href="https://www.linkedin.com/in/chetankumar-b/" target="_blank"
+          class="social-link group transition-transform duration-300 hover:translate-x-[-5px]"
+        >
+          <svg
+            class="w-4 h-4 text-gray-300 hover:text-gray-400 transition-colors duration-300"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+        </a>
+        <a href="https://github.com/ctbanaka" target="_blank" class="transition-transform duration-300 hover:-translate-x-2">
+          <svg class="w-5 h-5 text-gray-300 hover:text-gray-400 transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+      </a>
+      </div>
+    </div>
+
+    <footer
+      id="footer"
+      class="bg-[#2a2a28] w-full min-h-[60vh] flex flex-col justify-center items-start gap-10 px-4 md:px-20 py-12 text-gray-100"
+    >
+      <div class="text-4xl md:text-7xl font-bold">
+        <h1>Like what you see?</h1>
+      </div>
+
+      <div class="text-3xl md:text-5xl">
+        <h2>Get in touch</h2>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="text-xl md:text-2xl font-medium">Email</div>
+        <a
+          href="mailto:hello@chetankumar.dev"
+          class="text-lg md:text-2xl block relative p-[1px] rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-[length:200%] hover:bg-right transition-all duration-500 animate-gradient"
+        >
+          <span class="block bg-[#2a2a28] rounded-md p-3">
+            hello@chetankumar.dev
+          </span>
+        </a>
+      </div>
+      <div class="block md:hidden">
+        <span class="text-xl font-medium py-3">Social</span>
+        <div class="py-4 p-1 flex justify-start items-center gap-7">
+          <a
+          href="https://www.linkedin.com/in/chetankumar-b/" target="_blank"
+          class="social-link group transition-transform duration-300 hover:-translate-y-2"
+        >
+          <svg
+            class="size-6 text-gray-300 hover:text-gray-400 transition-colors duration-300"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+        </a>
+        <a href="https://github.com/ctbanaka" target="_blank" class="transition-transform duration-300 hover:-translate-y-2">
+          <svg class="size-6 text-gray-300 hover:text-gray-400 transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+      </a>
+        </div>
+      </div>
+      
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
