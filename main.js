@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const texts = ["Hello", "नमस्ते", "ನಮಸ್ಕಾರ"];
+  const texts = ["Hello", "नमस्ते", "ನନମସ୍କାର","নমস্কার"];
   let index = 0;
 
   const shuffleText = () => {
